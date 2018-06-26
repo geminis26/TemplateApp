@@ -1,0 +1,83 @@
+﻿@using TemplateApp.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Iniciar sesión";
+}
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Modern Login Form Responsive Widget Template :: w3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Modern Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="~/SmartLoggin/css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="~/SmartLoggin/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Snippet" rel="stylesheet"><!--online fonts-->
+    <!-- //web-fonts -->
+</head>
+<body>
+    <div data-vide-bg="/SmartLoggin/video/keyboard">
+        <div class="main-container">
+            <!--header-->
+            <div class="header-w3l">
+          
+            </div>
+            <!--//header-->
+            <!--main-->
+            <div class="main-content-agile">
+                <div class="w3ls-pro">
+                    <h2>Entrar al Sistema</h2>
+                </div>
+                <div class="sub-main-w3ls">
+
+                    <section id="loginForm">
+                        @using (Html.BeginForm("SmartLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <input id="Email" placeholder="Enter your E-mail" name="enter mail" type="email" required="">
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            <span class="icon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <input id="Password" placeholder="Enter Password" name="Password" type="password" required="">
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            <span class="icon2"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                            <div class="checkbox-w3">
+                                <span class="check-w3"><input type="checkbox" />Remember Me</span>
+                                <a href="#">Forgot Password?</a>
+                                <div class="clear"></div>
+                            </div>
+                  
+                            <input type="submit" value="">
+
+                        }
+
+                        <form action="#" method="post"></form>
+</div>
+            </div>
+            <!--//main-->
+            <!--footer-->
+            <div class="footer">
+                <p>&copy; 2017 modern Login Form. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+            </div>
+            <!--//footer-->
+        </div>
+    </div>
+    <!-- js -->
+    <script type="text/javascript" src="~/SmartLoggin/js/jquery-2.1.4.min.js"></script><!--common-js-->
+    <script src="~/SmartLoggin/js/jquery.vide.min.js"></script><!--video-js-->
+    <!-- //js -->
+</body>
+</html>
